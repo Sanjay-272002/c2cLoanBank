@@ -9,4 +9,4 @@ admin.site.index_title = "Welcome to Django CRUD App by Sanjay"
 
 @admin.register(UserModel)
 class UserDataAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'amount', 'gender', 'date_created']
+    list_display = ['id', 'name','email', 'amount', 'gender', 'date_created']

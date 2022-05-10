@@ -4,6 +4,7 @@ from multiselectfield import MultiSelectField
 # Create your models here.
 class UserModel(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.EmailField(max_length=50, null=True, blank=True)
     amount = models.IntegerField()
     tenture = models.IntegerField(null=True, blank=True)
     DEPARTMENTS = (

@@ -26,6 +26,7 @@
                         <tr>
                             <th scope="col">Profile ID</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Income</th>
                             <th scope="col">Loan amount required</th>
@@ -40,13 +41,14 @@
                         <tr>
                             <td>{{data.id}}</td>
                             <td>{{data.name}}</td>
+                            <td>{{data.email}}</td>
                             <td>{{data.gender}}</td>
                             <td>{{data.income}}</td>
                             <td>{{data.amount}}</td>
                             <td>{{data.interest}}</td>
                             <td>{{data.tenture}}</td>
                             <td>
-                                <a class="btn btn-success" href="mailto:someone@example.com?subject=Loan%20Acceptance%20Email">ACCEPT</a>
+                                <a class="btn btn-success" href="mailto:{{data.email}}?subject=Loan%20Acceptance%20Email">LEND</a>
                                 <a class="btn btn-warning" href="{% url 'update' data.id %}">MODIFY</a>
                                 <a class="btn btn-danger"  href="mailto:someone@example.com?subject=Loan%20Acceptance%20Email" href="{% url 'delete' data.id %}" onclick="returnconfirm('Are you sure?')">DECLINE</a>
                             </td>

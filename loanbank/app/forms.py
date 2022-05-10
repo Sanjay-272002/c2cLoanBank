@@ -9,6 +9,7 @@ class UserForm(forms.ModelForm):
         model = UserModel
         fields = '__all__'
         widgets = {
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder':'Email Here'}),
             'amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Enter Amount Here'}),
             'tenture': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Enter tenture Here in MONTHS'}),
             'occupation': forms.Select(attrs={'class': 'form-control'}),
@@ -17,6 +18,7 @@ class UserForm(forms.ModelForm):
         }
         error_messages = {
             'gender' : { 'required' : 'Must Select a Gender'},
+            'email' : { 'required' : 'Enter Correct Email'},
             'amount' : { 'required' : 'Enter Correct amount'},
             'income' : { 'required' : 'Select Your annual income'},
         }
