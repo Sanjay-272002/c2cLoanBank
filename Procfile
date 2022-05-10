@@ -1,1 +1,1 @@
-web: gunicorn loanbank.wsgi
+web: python loanbank/manage.py runserver 0.0.0.0:$PORT
