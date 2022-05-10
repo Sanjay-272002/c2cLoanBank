@@ -1,1 +1,1 @@
-web: uwsgi uwsgi.ini
+web: python loanbank/manage.py runserver 0.0.0.0:$PORT
