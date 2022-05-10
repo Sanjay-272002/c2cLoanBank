@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'web.apps.WebConfig',
     'profilescreen.apps.ProfilescreenConfig',
-    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
