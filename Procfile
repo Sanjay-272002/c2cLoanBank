@@ -1,1 +1,1 @@
-web: gunicorn loanbank.wsgi
+web: uwsgi uwsgi.ini
