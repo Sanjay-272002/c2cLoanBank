@@ -4,5 +4,5 @@ from .models import data
 class dataForm(forms.ModelForm):
     class Meta:
         model = data
-        fields = ('accountnumber','branch','phonenumber','aadharcard','pancard','salaryslips','photo')
+        fields = ('accountnumber','branch','CTC','aadharcard','pancard','salaryslips','photo')
         

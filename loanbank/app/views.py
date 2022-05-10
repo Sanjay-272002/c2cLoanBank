@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .forms import UserForm
 from .models import UserModel
+import random
 
 # Create 
 def create(request):
@@ -42,3 +43,10 @@ def delete(request, pk):
     get_user.delete()
     messages.error(request, 'Loan request decline')
     return redirect('/')
+
+def calculateCibilScore(request):
+    cibil_scrore =  random.randint(300, 700);
+    if cibil_scrore:
+     return render(request, 'app/read.html',cibil_scrore)
+    else: 
+     return render(request, 'app/read.html','')
