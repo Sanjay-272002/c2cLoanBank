@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,11 +28,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'home'
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    'Profilescreen.apps.ProfilescreenConfig',
+    'app.apps.AppConfig',
+    'accounts.apps.AccountsConfig',
+    'web.apps.WebConfig',
+    'profilescreen.apps.ProfilescreenConfig',
     'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +45,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'crispy_forms',
+    
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,6 +136,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'loanbank/static')
+]
+#for uploading files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
+
+SITE_ID = 1
+# 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -1,0 +1,107 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sanjay Sikdar | Learn with Znas">
+    <meta name="description" content="Django CRUD Application Tutorial">
+    <title>LOAN UPDATION FORM</title>
+</head>
+<body>
+    <div class="container-fluid">
+    <!-- Content here -->
+        <div class="row gx-2 pt-3">
+            <h3 class="text-center col-md-6 offset-3" style="background-color:#e56237; padding: 15px; border-radius: 15px; width: 58%; color:#fff">LOAN UPDATION FORM</h3>
+            <div class="col-md-6 offset-3 mt-4" style="border:1px solid #80808029; padding:15px;">
+                <a class="btn btn-primary mb-3" href="{% url 'read' %}">LOAN REQUESTER'S PROFILE</a>
+                
+                {% comment %} <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="Save">
+                </form> {% endcomment %}
+
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">{{form.name.label}}</label>
+                        {{form.name}}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">{{form.amount.label}}</label>
+                        {{form.amount}}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tenture" class="form-label">{{form.tenture.label}}</label>
+                        {{form.tenture}}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="occupation" class="form-label">{{form.occupation.label}}</label>
+                        {{form.occupation}}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">{{form.gender.label}}</label><br/> 
+                        {% for radio in  form.gender %}
+                            <div class="form-check form-check-inline">
+                                {{radio.tag}}
+                                <label class="form-check-label">{{radio.choice_label}}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">{{form.interest.label}}</label>
+                        {{form.interest}}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="languages" class="form-label">{{form.income.label}}</label><br/>
+
+                        {% for checkbox in  form.income %}
+                            <div class="form-check form-check-inline">
+                                {{checkbox.tag}}
+                                <label class="form-check-label">{{checkbox.choice_label}}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-outline-primary">Update Data</button>
+                        <button type="reset" class="btn btn-outline-warning">Reset Data</button>
+                    </div>
+                <form>
+
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger" role="alert">
+                            {{error}}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+
+                {% if messages %}
+                    {% for message in  messages %}
+                        <div class="alert alert-{{message.tags}}" role="alert">
+                        {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{%endblock%}
