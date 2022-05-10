@@ -4,5 +4,5 @@
 
 - git clone
 - pip install
-- cd loan/locanbank
+- cd loan/loanbank
 - python manage.py runserver
