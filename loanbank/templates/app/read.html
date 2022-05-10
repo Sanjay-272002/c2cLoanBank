@@ -46,8 +46,9 @@
                             <td>{{data.interest}}</td>
                             <td>{{data.tenture}}</td>
                             <td>
-                                <a class="btn btn-primary" href="{% url 'update' data.id %}">ACCEPT LOAN</a>
-                                <a class="btn btn-danger" href="{% url 'delete' data.id %}" onclick="returnconfirm('Are you sure?')">DECLINE LOAN</a>
+                                <a class="btn btn-success" href="mailto:someone@example.com?subject=Loan%20Acceptance%20Email">ACCEPT</a>
+                                <a class="btn btn-warning" href="{% url 'update' data.id %}">MODIFY</a>
+                                <a class="btn btn-danger"  href="mailto:someone@example.com?subject=Loan%20Acceptance%20Email" href="{% url 'delete' data.id %}" onclick="returnconfirm('Are you sure?')">DECLINE</a>
                             </td>
                         </tr>
                         {% endfor %}
