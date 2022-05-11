@@ -12,13 +12,14 @@
   Install postgresql,pgadmin and connect both.
 
 ### Steps to link database with project
--install postgresql and pgadmin 
--connect both with same port for example:port 5432
--while opening pgadmin it will ask for password .whether you create on  your own or use my password january27
--create database at pgadmin and fill username ,host name .
--fill localhost at hostname
--to link pgadmin with project do the following changes at Database in  setting.py 
--DATABASES = {
+- install postgresql and pgadmin 
+- connect both with same port for example:port 5432
+- while opening pgadmin it will ask for password .whether you create on  your own or use my password january27
+- create database at pgadmin and fill username ,host name .
+- fill localhost at hostname
+- to link pgadmin with project do the following changes in *setting.py* 
+```
+DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': ‘<database_name>’,
@@ -28,7 +29,9 @@
        'PORT': '<database_port>',
    }
 }
--In my project my database details are mentioned below
+```
+#### Eg
+```
  DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -38,8 +41,7 @@
         'HOST':'localhost'
     }
 }
--then run server by commanding python manage.py runserver
-
+```
 
 ### Steps to run in local
 
