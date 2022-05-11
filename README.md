@@ -30,7 +30,7 @@ DATABASES = {
    }
 }
 ```
-#### Eg
+#### For Example my code has this setup
 ```
  DATABASES = {
     'default': {
