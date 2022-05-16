@@ -48,5 +48,6 @@ DATABASES = {
 - git clone
 - pipenv shell
 - pipenv install
+- pipenv install django-crispy-forms
 - cd loan/loanbank
 - python manage.py runserver
