@@ -51,6 +51,11 @@ DATABASES = {
 - pipenv install django-crispy-forms
 - cd loan/loanbank
 - python manage.py runserver
+```
+
+
 ###for signing in google 
+```
+
 -change 127.0.0.1:8000 to localhost:8000
 -By doing this we can signin by google account and it redirects to our websit after signing in
